@@ -1,0 +1,70 @@
+{
+	"name": "client.api",
+	"version": "1.0.0",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:bianruanjian/client.api.git"
+	},
+	"dependencies": {
+		"@dojo/framework": "~3.0.0",
+		"tslib": "~1.8.1",
+		"@types/bootstrap": "3.3.37",
+		"bootstrap": "~4.1.0"
+	},
+	"devDependencies": {
+		"@dojo/cli-build-widget": "~3.0.0",
+		"@dojo/cli-build-app": "~3.0.0",
+		"@dojo/cli-test-intern": "~3.0.0",
+		"@dojo/test-extras": "~2.0.0",
+		"@types/node": "~9.6.5",
+		"lint-staged": "6.0.0",
+		"prettier": "1.9.2",
+		"typescript": "~2.6.1"
+	},
+	"scripts": {
+		"precommit": "lint-staged",
+		"prettier": "prettier --write 'src/**/*.ts' 'src/**/*.json' 'src/**/*.css' 'tests/**/*.ts'",
+		"dev": "dojo build --mode dev --watch memory --serve",
+		"test": "dojo test",
+		"build": "dojo build widget --mode dist"
+	},
+	"lint-staged": {
+		"*.{ts,tsx,json,css}": [
+			"prettier --write",
+			"git add"
+		]
+	},
+	"prettier": {
+		"singleQuote": true,
+		"tabWidth": 4,
+		"useTabs": true,
+		"printWidth": 120,
+		"arrowParens": "always",
+		"overrides": [
+			{
+				"files": [
+					"*.json",
+					".eslintrc",
+					".tslintrc",
+					".prettierrc",
+					".tern-project"
+				],
+				"options": {
+					"parser": "json"
+				}
+			},
+			{
+				"files": "*.{css,sass,scss,less}",
+				"options": {
+					"parser": "postcss"
+				}
+			},
+			{
+				"files": "*.ts",
+				"options": {
+					"parser": "typescript"
+				}
+			}
+		]
+	}
+}
