@@ -3,7 +3,7 @@ import { v } from '@dojo/framework/widget-core/d';
 
 export class AppBase extends WidgetBase {
     protected render() {
-        return v('div', {}, ['client.api']);
+        return v('div', {}, ['client-api']);
     }
 }
 
