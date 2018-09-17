@@ -1,0 +1,9 @@
+{
+	"environments": [
+		{
+			"browserName": "node"
+		}
+	],
+	"suites": [],
+	"functionalSuites": []
+}
