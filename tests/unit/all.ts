@@ -1,2 +1,2 @@
-import './apis/request';
+import './api/request';
 import './util/templateString';

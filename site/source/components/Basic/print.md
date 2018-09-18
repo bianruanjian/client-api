@@ -6,8 +6,14 @@ date: 2018-09-17 15:10:52
 tags:
 ---
 
-基于控制台封装的打印组件，print.log(string content)
+基于 javascript 的 console 封装的打印组件
 
+## 示例
+
+```javascript
+print.log('hello,world');  
+print.log('hello, ${world}');//字符串模板  
+```
 
 ## 方法
 

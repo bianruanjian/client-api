@@ -1,5 +1,5 @@
-const request = function(url: string, options: any = {}) {
-	const { headers = {} } = options;
+const request = function (url: string, options: any = {}) {
+	const { headers = {} as any } = options;
 	if (headers.set) {
 		headers.set('X-Requested-With', 'XMLHttpRequest');
 	} else {

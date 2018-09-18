@@ -6,8 +6,27 @@ date: 2018-09-14 15:10:52
 tags:
 ---
 
-发起 HTTP 网络请求， request(Object object)
+发起 HTTP 网络请求
 
+## 示例
+
+```javascript
+request({
+    url:'http://xx.com', 
+    data: {
+        user: 'user'
+    }, 
+    done: (data, status, response) => {}
+)
+request({
+    url:'http://xx.com', 
+    method: 'POST', 
+    data: {
+        user: 'user'
+    }, 
+    done: (data, status, response) => {}
+)
+```
 
 ## 属性
 
@@ -30,3 +49,11 @@ tags:
 | DELETE  | HTTP 请求 DELETE  |
 | HEAD    | HTTP 请求 HEAD    |
 | OPTIONS | HTTP 请求 OPTIONS |
+
+## done 和 fial 的回调参数
+
+| 值       | 类型                      | 说明                          |
+| -------- | ------------------------- | ----------------------------- |
+| data     | string/Object/Arraybuffer | HTTP 请求返回的数据           |
+| status   | number                    | HTTP 请求返回的状态码         |
+| response | Object                    | HTTP 请求返回的 Response 对象 |
