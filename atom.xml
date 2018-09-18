@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>client-api</title>
+  
+  
+  <link href="/client-api/atom.xml" rel="self"/>
+  
+  <link href="https://bianruanjian.github.io/"/>
+  <updated>2018-09-18T03:46:33.823Z</updated>
+  <id>https://bianruanjian.github.io/</id>
+  
+  <author>
+    <name>bianruanjian.com</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>APIs</title>
+    <link href="https://bianruanjian.github.io/2018/09/17/Components/"/>
+    <id>https://bianruanjian.github.io/2018/09/17/Components/</id>
+    <published>2018-09-17T11:40:17.000Z</published>
+    <updated>2018-09-18T03:46:33.823Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Basic"><a href="#Basic" class="headerlink" title="Basic"></a>Basic</h2><ul><li>request HTTP请求</li><li>print 控制台打印</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Basic&quot;&gt;&lt;a href=&quot;#Basic&quot; class=&quot;headerlink&quot; title=&quot;Basic&quot;&gt;&lt;/a&gt;Basic&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;request HTTP请求&lt;/li&gt;
+&lt;li&gt;print 控制台打印&lt;/li&gt;
+&lt;/ul&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>

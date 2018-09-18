@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>request | client-api</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="发起 HTTP 网络请求 示例1234567891011121314151617// 默认 GET 请求request(&amp;#123;    url: &apos;http://xx.com&apos;,     data: &amp;#123;        user: &apos;user&apos;    &amp;#125;,     done: (data, status, response) =&amp;gt; &amp;#123;&amp;#125;);// PO">
+<meta property="og:type" content="website">
+<meta property="og:title" content="request">
+<meta property="og:url" content="https://bianruanjian.github.io/components/Basic/request.html">
+<meta property="og:site_name" content="client-api">
+<meta property="og:description" content="发起 HTTP 网络请求 示例1234567891011121314151617// 默认 GET 请求request(&amp;#123;    url: &apos;http://xx.com&apos;,     data: &amp;#123;        user: &apos;user&apos;    &amp;#125;,     done: (data, status, response) =&amp;gt; &amp;#123;&amp;#125;);// PO">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-18T03:46:33.823Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="request">
+<meta name="twitter:description" content="发起 HTTP 网络请求 示例1234567891011121314151617// 默认 GET 请求request(&amp;#123;    url: &apos;http://xx.com&apos;,     data: &amp;#123;        user: &apos;user&apos;    &amp;#125;,     done: (data, status, response) =&amp;gt; &amp;#123;&amp;#125;);// PO">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+  <link href="//cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <script src="//cdn.bootcss.com/svg-injector/1.1.3/svg-injector.min.js"></script>
+  <script src="//cdn.bootcss.com/custom-elements/1.1.1/custom-elements.min.js"></script>
+
+  <link rel="stylesheet" href="/client-api/css/main.css">
+  <link rel="stylesheet" href="/client-api/css/style.css">
+<link rel="stylesheet" href="/client-api/css/prism-vs.css" type="text/css"></head>
+
+<body class="
+">
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <!-- <h1 id="logo-wrap">
+        <a href="/client-api/" id="logo">client-api</a>
+      </h1> -->
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/client-api/">Home</a>
+        
+          <a class="main-nav-link" href="/client-api/components">APIs</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-github-link" target="_blank" class="nav-icon" href="https://github.com/bianruanjian/client-api" ></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <!-- <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://bianruanjian.github.io"></form>
+      </div> -->
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><section class="section">
+	<div class="container-fluid">
+		<div class="columns">
+			<div class="column is-2 menu-sidebar">
+				<aside class="menu">
+    
+<p class="menu-label">
+        Basic
+    </p>
+
+    <ul class="menu-list">
+        
+            <li
+                
+            >
+                <a href="/client-api/components/Basic/print.html">
+                    print
+                </a>
+            </li>
+        
+            <li
+                class="active" 
+            >
+                <a href="/client-api/components/Basic/request.html">
+                    request
+                </a>
+            </li>
+        
+    </ul>
+
+</aside>
+
+			</div>
+			<div class="column is-10 article">
+				<article id="components-undefined" class="article article-type-components" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      request
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>发起 HTTP 网络请求</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 默认 GET 请求</span></span><br><span class="line">request(&#123;</span><br><span class="line">    url: <span class="string">'http://xx.com'</span>, </span><br><span class="line">    data: &#123;</span><br><span class="line">        user: <span class="string">'user'</span></span><br><span class="line">    &#125;, </span><br><span class="line">    done: <span class="function">(<span class="params">data, status, response</span>) =&gt;</span> &#123;&#125;</span><br><span class="line">);</span><br><span class="line"><span class="comment">// POST 请求</span></span><br><span class="line">request(&#123;</span><br><span class="line">    url: <span class="string">'http://xx.com'</span>, </span><br><span class="line">    method: <span class="string">'POST'</span>, </span><br><span class="line">    data: &#123;</span><br><span class="line">        user: <span class="string">'user'</span></span><br><span class="line">    &#125;, </span><br><span class="line">    done: <span class="function">(<span class="params">data, status, response</span>) =&gt;</span> &#123;&#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+<th>值类型</th>
+<th>默认值</th>
+<th>是否必填</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>url</td>
+<td>地址</td>
+<td>string</td>
+<td></td>
+<td>是</td>
+</tr>
+<tr>
+<td>method</td>
+<td>方法</td>
+<td>string</td>
+<td>GET</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>请求数据</td>
+<td>object</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>done</td>
+<td>成功回调</td>
+<td>function</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fail</td>
+<td>失败回调</td>
+<td>function</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="object-method-的可选值"><a href="#object-method-的可选值" class="headerlink" title="object.method 的可选值"></a>object.method 的可选值</h2><table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>HTTP 请求 GET</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>HTTP 请求 POST</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>HTTP 请求 PUT</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>HTTP 请求 DELETE</td>
+</tr>
+<tr>
+<td>HEAD</td>
+<td>HTTP 请求 HEAD</td>
+</tr>
+<tr>
+<td>OPTIONS</td>
+<td>HTTP 请求 OPTIONS</td>
+</tr>
+</tbody>
+</table>
+<h2 id="done-和-fail-的回调参数"><a href="#done-和-fail-的回调参数" class="headerlink" title="done 和 fail 的回调参数"></a>done 和 fail 的回调参数</h2><table>
+<thead>
+<tr>
+<th>值</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td>string/Object/Array</td>
+<td>HTTP 请求返回的数据</td>
+</tr>
+<tr>
+<td>status</td>
+<td>number</td>
+<td>HTTP 请求返回的状态码</td>
+</tr>
+<tr>
+<td>response</td>
+<td>Object</td>
+<td>HTTP 请求返回的 Response 对象</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+			</div>
+		</div>
+	</div>
+</section>
+</section>
+        
+      </div>
+      
+       
+      
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/client-api/" class="mobile-nav-link">Home</a>
+  
+    <a href="/client-api/components" class="mobile-nav-link">APIs</a>
+  
+</nav>
+    
+  
+  <!--
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  -->
+  <script src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  
+  
+  
+  <script src="/client-api/js/script.js"></script>
+  
+
+  
+  </div>
+</body>
+</html>
