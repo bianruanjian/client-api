@@ -10,9 +10,11 @@ tags:
 
 ## 示例
 
-```javascript
-print.log('hello,world');  
-print.log('hello, ${world}');//字符串模板  
+```ts
+print.log('hello, world');
+//字符串模板
+let word = 'world';
+print.log('hello, ${word}');
 ```
 
 ## 方法

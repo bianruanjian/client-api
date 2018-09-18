@@ -10,22 +10,24 @@ tags:
 
 ## 示例
 
-```javascript
+```ts
+// 默认 GET 请求
 request({
-    url:'http://xx.com', 
+    url: 'http://xx.com', 
     data: {
         user: 'user'
     }, 
     done: (data, status, response) => {}
-)
+);
+// POST 请求
 request({
-    url:'http://xx.com', 
+    url: 'http://xx.com', 
     method: 'POST', 
     data: {
         user: 'user'
     }, 
     done: (data, status, response) => {}
-)
+);
 ```
 
 ## 属性
@@ -52,8 +54,8 @@ request({
 
 ## done 和 fial 的回调参数
 
-| 值       | 类型                      | 说明                          |
-| -------- | ------------------------- | ----------------------------- |
-| data     | string/Object/Arraybuffer | HTTP 请求返回的数据           |
-| status   | number                    | HTTP 请求返回的状态码         |
-| response | Object                    | HTTP 请求返回的 Response 对象 |
+| 值       | 类型                | 说明                          |
+| -------- | ------------------- | ----------------------------- |
+| data     | string/Object/Array | HTTP 请求返回的数据           |
+| status   | number              | HTTP 请求返回的状态码         |
+| response | Object              | HTTP 请求返回的 Response 对象 |
