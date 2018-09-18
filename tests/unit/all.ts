@@ -1,1 +1,2 @@
-import './widgets/all';
+import './api/request';
+import './util/templateString';
