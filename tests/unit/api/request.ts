@@ -13,7 +13,7 @@ describe('request', () => {
         fetchStub.reset();
     });
 
-    it('get width null url ', () => {
+    it('invalid request with null url', () => {
         const options = {
             url: '',
         };

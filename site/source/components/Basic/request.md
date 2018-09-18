@@ -52,7 +52,7 @@ request({
 | HEAD    | HTTP 请求 HEAD    |
 | OPTIONS | HTTP 请求 OPTIONS |
 
-## done 和 fial 的回调参数
+## done 和 fail 的回调参数
 
 | 值       | 类型                | 说明                          |
 | -------- | ------------------- | ----------------------------- |
