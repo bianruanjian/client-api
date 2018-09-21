@@ -36,7 +36,7 @@ setData({
 
 **注意：**
 
-1. data 为 json 格式数据；
-2. data 中的 key 支持表达式，如果表达中式指定的对象不存在，会默认创建；
-3. setData 默认存储到全局数据对象 global.store。
+1. setData 默认存储到全局数据对象 global.store。
+2. data 为 json 格式数据，以 key: value 的形式表示；
+3. data 中的 key 可以以数据路径的形式给出，支持改变数组中的某一项或对象的某个属性，如 array[2].foo.bar，并且不需要在 store 中预先定义；
 

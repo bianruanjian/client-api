@@ -10,6 +10,7 @@ jobs:
   include:
     stage: Test site
     script:
+    - touch site/db.json
     - grunt test
     - grunt ci
 deploy:
