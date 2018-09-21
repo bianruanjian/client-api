@@ -20,7 +20,7 @@ describe('setData', () => {
         assert.throws(() => { setData(stateData) }, Error, '未找到 store，请设置 global.store');
     })
 
-    it('add one object', () => {
+    it('add foo', () => {
         stateData = {
             foo: 'test'
         };
@@ -39,7 +39,7 @@ describe('setData', () => {
         assert.strictEqual(store.get(store.path('bar')), 'test2');
     })
 
-    it('add a object expression 1', () => {
+    it('add foo.bar', () => {
         stateData = {
             'foo.bar': 'test'
         };
@@ -48,7 +48,7 @@ describe('setData', () => {
         assert.strictEqual(store.get(store.path('foo/bar')), 'test');
     })
 
-    it('add a object expression 2', () => {
+    it('add foo.bar.a', () => {
         stateData = {
             'foo.bar.a': 'test'
         };
@@ -56,7 +56,7 @@ describe('setData', () => {
         assert.strictEqual(store.get(store.path('foo/bar/a')), 'test');
     })
 
-    it('add a array expression 1', () => {
+    it('add foo[2].bar', () => {
         stateData = {
             'foo[2].bar': 'test'
         };
@@ -65,7 +65,7 @@ describe('setData', () => {
         assert.strictEqual(store.get(store.path('foo/2/bar')), 'test');
     })
 
-    it('add a array expression 2', () => {
+    it('add foo[0]["bar"]', () => {
         stateData = {
             'foo[0]["bar"]': 'test'
         };

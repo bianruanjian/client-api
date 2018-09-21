@@ -6,7 +6,7 @@ import global from '@dojo/shim/global';
 import { StateData } from '../interface';
 
 
-// 转换字符串：
+// 转换字符串为数据路径：
 // 1. a.b  -> /a/b
 // 2. array[1].a.b  -> /array/1/a/b
 // 3. array[1]['a'] -> /array/1/a
@@ -15,7 +15,6 @@ function _getPath(name: string) {
     if (path.indexOf('\/') != 0) {
         path = '/' + path;
     }
-    console.log(path);
     return path;
 }
 
