@@ -6,7 +6,7 @@ date: 2018-09-21 15:40:52
 tags:
 ---
 
-setData 用于更新 store 中的值，并检查重绘视图
+setData 用于更新 store 中的值
 
 ## 示例
 
@@ -36,6 +36,5 @@ setData({
 
 **注意：**
 
-1. setData 默认存储到全局数据对象 global.store；
-2. data 为 json 格式数据，以 key: value 的形式表示；
-3. data 中的 key 可以以数据路径的形式给出，支持改变数组中的某一项或对象的某个属性，如 array[2].foo.bar，并且不需要在 store 中预先定义。
+1. data 为 json 格式数据，以 key: value 的形式表示；
+2. data 中的 key 可以以数据路径的形式给出，支持改变数组中的某一项或对象的某个属性，如 `array[2].foo.bar`，并且不需要预先定义。

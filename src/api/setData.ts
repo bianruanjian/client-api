@@ -5,11 +5,10 @@ import { replace } from '@dojo/framework/stores/state/operations';
 import global from '@dojo/shim/global';
 import { StateData } from '../interface';
 
-
 // 转换字符串为数据路径：
 // 1. a.b  -> /a/b
-// 2. array[1].a.b  -> /array/1/a/b
-// 3. array[1]['a'] -> /array/1/a
+// 2. array[1].a.b -> /array/1/a/b
+// 3. array[1]['a'] 或 array[1]["a"] -> /array/1/a
 function _getPath(name: string) {
     let path = name.replace(/\./g, '/').replace(/"/g, '').replace(/'/g, '').replace(/\[/g, '/').replace(/\]/g, '');
     if (path.indexOf('\/') != 0) {
@@ -18,13 +17,12 @@ function _getPath(name: string) {
     return path;
 }
 
-
 function _getStore(): Store {
     return global.store;
 }
 
 /**
- * setData 用于更新 store 中的值，并检查是否需要重绘视图
+ * 用于更新 store 中的值
  * @param data json 对象
  */
 export default function setData(data: StateData) {

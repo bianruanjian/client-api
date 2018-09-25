@@ -1,10 +1,11 @@
 import { describe, it, beforeEach } from "intern/lib/interfaces/bdd";
-const { assert } = intern.getPlugin('chai');
 import { Store } from '@dojo/framework/stores/Store';
 import global from '@dojo/shim/global';
 import getData from '../../../src/api/getData';
 import { OperationType } from '@dojo/framework/stores/state/Patch';
 import { Pointer } from '@dojo/framework/stores/state/Pointer';
+
+const { assert } = intern.getPlugin('chai');
 
 function storeAdd(path: string, value: any) {
     global.store.apply([
@@ -23,24 +24,29 @@ describe('getData', () => {
     })
 
     it('get foo', () => {
-        storeAdd('foo', 'foo');
+        storeAdd('/foo', 'foo');
         assert.strictEqual(getData('foo'), 'foo');
     })
 
     it('get foo.bar', () => {
-        storeAdd('foo/bar', 'foo');
+        storeAdd('/foo/bar', 'foo');
         assert.strictEqual(getData('foo.bar'), 'foo');
     })
 
-    it('get foo[bar]', () => {
-        storeAdd('foo/bar', 'foo');
-        assert.strictEqual(getData('foo[bar]'), 'foo');
+    it("get foo['bar'] with single quotes", () => {
+        storeAdd('/foo/bar', 'foo');
+        assert.strictEqual(getData("foo['bar']"), 'foo');
     })
 
-    it('get foo[1]/bar', () => {
-        storeAdd('foo/1/bar', 'foo');
-        assert.strictEqual(getData('foo[0]/bar'), undefined);
-        assert.strictEqual(getData('foo[1]/bar'), 'foo');
+    it('get foo["bar"] with double quotes', () => {
+        storeAdd('/foo/bar', 'foo');
+        assert.strictEqual(getData('foo["bar"]'), 'foo');
+    })
+
+    it('get foo[1].bar', () => {
+        storeAdd('/foo/1/bar', 'foo');
+        assert.strictEqual(getData('foo[0].bar'), undefined);
+        assert.strictEqual(getData('foo[1].bar'), 'foo');
     })
 
 })
