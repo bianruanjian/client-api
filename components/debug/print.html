@@ -5,19 +5,19 @@
   
 
   
-  <title>client-api | client-api</title>
+  <title>print | client-api</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="客户端 API。">
+  <meta name="description" content="基于 javascript 的 console 封装的打印组件 示例1234print.log(&apos;hello, world&apos;);// 字符串模板let word = &apos;world&apos;;print.log(&apos;hello, $&amp;#123;word&amp;#125;&apos;); 方法   名称 说明 参数     log 日志 content   info 提示 content   warn 警告 content">
 <meta property="og:type" content="website">
-<meta property="og:title" content="client-api">
-<meta property="og:url" content="https://bianruanjian.github.io/components/index.html">
+<meta property="og:title" content="print">
+<meta property="og:url" content="https://bianruanjian.github.io/components/debug/print.html">
 <meta property="og:site_name" content="client-api">
-<meta property="og:description" content="客户端 API。">
+<meta property="og:description" content="基于 javascript 的 console 封装的打印组件 示例1234print.log(&apos;hello, world&apos;);// 字符串模板let word = &apos;world&apos;;print.log(&apos;hello, $&amp;#123;word&amp;#125;&apos;); 方法   名称 说明 参数     log 日志 content   info 提示 content   warn 警告 content">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-09-25T09:20:20.936Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="client-api">
-<meta name="twitter:description" content="客户端 API。">
+<meta name="twitter:title" content="print">
+<meta name="twitter:description" content="基于 javascript 的 console 封装的打印组件 示例1234print.log(&apos;hello, world&apos;);// 字符串模板let word = &apos;world&apos;;print.log(&apos;hello, $&amp;#123;word&amp;#125;&apos;); 方法   名称 说明 参数     log 日志 content   info 提示 content   warn 警告 content">
   
   
     <link rel="icon" href="/favicon.png">
@@ -106,7 +106,7 @@
     <ul class="menu-list">
         
             <li
-                
+                class="active" 
             >
                 <a href="/client-api/components/debug/print.html">
                     print
@@ -148,7 +148,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      client-api
+      print
     </h1>
   
 
@@ -156,7 +156,59 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>客户端 API。</p>
+        <p>基于 javascript 的 console 封装的打印组件</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print.log(<span class="string">'hello, world'</span>);</span><br><span class="line"><span class="comment">// 字符串模板</span></span><br><span class="line"><span class="keyword">let</span> word = <span class="string">'world'</span>;</span><br><span class="line">print.log(<span class="string">'hello, $&#123;word&#125;'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>log</td>
+<td>日志</td>
+<td>content</td>
+</tr>
+<tr>
+<td>info</td>
+<td>提示</td>
+<td>content</td>
+</tr>
+<tr>
+<td>warn</td>
+<td>警告</td>
+<td>content</td>
+</tr>
+<tr>
+<td>error</td>
+<td>错误</td>
+<td>content</td>
+</tr>
+</tbody>
+</table>
+<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+<th>值类型</th>
+<th>默认值</th>
+<th>是否必填</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>content</td>
+<td>打印内容</td>
+<td>any</td>
+<td></td>
+<td>否</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>

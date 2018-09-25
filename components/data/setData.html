@@ -5,19 +5,19 @@
   
 
   
-  <title>client-api | client-api</title>
+  <title>setData | client-api</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="客户端 API。">
+  <meta name="description" content="setData 用于更新 store 中的值 示例1234567891011121314// key 为普通字符串setData(&amp;#123;    &apos;foo&apos;: &apos;foo&apos;);// key 为表达式--对象路径setData(&amp;#123;    &apos;foo.a&apos;: &apos;foo&apos;);// key 为表达式--数组对象路径setData(&amp;#123;    &apos;foo[0].a&apos;: &apos;foo&apos;); 属性">
 <meta property="og:type" content="website">
-<meta property="og:title" content="client-api">
-<meta property="og:url" content="https://bianruanjian.github.io/components/index.html">
+<meta property="og:title" content="setData">
+<meta property="og:url" content="https://bianruanjian.github.io/components/data/setData.html">
 <meta property="og:site_name" content="client-api">
-<meta property="og:description" content="客户端 API。">
+<meta property="og:description" content="setData 用于更新 store 中的值 示例1234567891011121314// key 为普通字符串setData(&amp;#123;    &apos;foo&apos;: &apos;foo&apos;);// key 为表达式--对象路径setData(&amp;#123;    &apos;foo.a&apos;: &apos;foo&apos;);// key 为表达式--数组对象路径setData(&amp;#123;    &apos;foo[0].a&apos;: &apos;foo&apos;); 属性">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-09-25T09:20:20.936Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="client-api">
-<meta name="twitter:description" content="客户端 API。">
+<meta name="twitter:title" content="setData">
+<meta name="twitter:description" content="setData 用于更新 store 中的值 示例1234567891011121314// key 为普通字符串setData(&amp;#123;    &apos;foo&apos;: &apos;foo&apos;);// key 为表达式--对象路径setData(&amp;#123;    &apos;foo.a&apos;: &apos;foo&apos;);// key 为表达式--数组对象路径setData(&amp;#123;    &apos;foo[0].a&apos;: &apos;foo&apos;); 属性">
   
   
     <link rel="icon" href="/favicon.png">
@@ -90,7 +90,7 @@
             </li>
         
             <li
-                
+                class="active" 
             >
                 <a href="/client-api/components/data/setData.html">
                     setData
@@ -148,7 +148,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      client-api
+      setData
     </h1>
   
 
@@ -156,7 +156,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>客户端 API。</p>
+        <p>setData 用于更新 store 中的值</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// key 为普通字符串</span></span><br><span class="line">setData(&#123;</span><br><span class="line">    <span class="string">'foo'</span>: <span class="string">'foo'</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">// key 为表达式--对象路径</span></span><br><span class="line">setData(&#123;</span><br><span class="line">    <span class="string">'foo.a'</span>: <span class="string">'foo'</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">// key 为表达式--数组对象路径</span></span><br><span class="line">setData(&#123;</span><br><span class="line">    <span class="string">'foo[0].a'</span>: <span class="string">'foo'</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+<th>值类型</th>
+<th>默认值</th>
+<th>是否必填</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td>数据</td>
+<td>Object</td>
+<td></td>
+<td>是</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意：</strong></p>
+<ol>
+<li>data 为 json 格式数据，以 key: value 的形式表示；</li>
+<li>data 中的 key 可以以数据路径的形式给出，支持改变数组中的某一项或对象的某个属性，如 <code>array[2].foo.bar</code>，并且不需要预先定义。</li>
+</ol>
 
       
     </div>

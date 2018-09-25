@@ -5,19 +5,19 @@
   
 
   
-  <title>client-api | client-api</title>
+  <title>getData | client-api</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="客户端 API。">
+  <meta name="description" content="getData 用于从 store 中取出数据 示例1234567891011121314151617181920// 数据const data = &amp;#123;    foo: &amp;#123;        a: &apos;foo&apos;    &amp;#125;,    bar: [        &amp;#123;            a: &apos;bar&apos;        &amp;#125;    ]&amp;#125;// 获取 da">
 <meta property="og:type" content="website">
-<meta property="og:title" content="client-api">
-<meta property="og:url" content="https://bianruanjian.github.io/components/index.html">
+<meta property="og:title" content="getData">
+<meta property="og:url" content="https://bianruanjian.github.io/components/data/getData.html">
 <meta property="og:site_name" content="client-api">
-<meta property="og:description" content="客户端 API。">
+<meta property="og:description" content="getData 用于从 store 中取出数据 示例1234567891011121314151617181920// 数据const data = &amp;#123;    foo: &amp;#123;        a: &apos;foo&apos;    &amp;#125;,    bar: [        &amp;#123;            a: &apos;bar&apos;        &amp;#125;    ]&amp;#125;// 获取 da">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-09-25T09:20:20.936Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="client-api">
-<meta name="twitter:description" content="客户端 API。">
+<meta name="twitter:title" content="getData">
+<meta name="twitter:description" content="getData 用于从 store 中取出数据 示例1234567891011121314151617181920// 数据const data = &amp;#123;    foo: &amp;#123;        a: &apos;foo&apos;    &amp;#125;,    bar: [        &amp;#123;            a: &apos;bar&apos;        &amp;#125;    ]&amp;#125;// 获取 da">
   
   
     <link rel="icon" href="/favicon.png">
@@ -82,7 +82,7 @@
     <ul class="menu-list">
         
             <li
-                
+                class="active" 
             >
                 <a href="/client-api/components/data/getData.html">
                     getData
@@ -148,7 +148,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      client-api
+      getData
     </h1>
   
 
@@ -156,7 +156,32 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>客户端 API。</p>
+        <p>getData 用于从 store 中取出数据</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 数据</span></span><br><span class="line"><span class="keyword">const</span> data = &#123;</span><br><span class="line">    foo: &#123;</span><br><span class="line">        a: <span class="string">'foo'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    bar: [</span><br><span class="line">        &#123;</span><br><span class="line">            a: <span class="string">'bar'</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取 data 对象中的 foo 的值</span></span><br><span class="line">getData(<span class="string">'foo'</span>); <span class="comment">// &#123; a: 'foo'&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取 data 对象中的 foo 对象下的 a 的值</span></span><br><span class="line">getData(<span class="string">'foo.a'</span>); <span class="comment">// 'foo'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取 data 对象中的 bar 数据下第一个对象的 a 的值</span></span><br><span class="line">getData(<span class="string">'bar[0].a'</span>); <span class="comment">// 'bar'</span></span><br></pre></td></tr></table></figure>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+<th>值类型</th>
+<th>默认值</th>
+<th>是否必填</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path</td>
+<td>数据路径</td>
+<td>string</td>
+<td></td>
+<td>是</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意：</strong></p>
+<ol>
+<li>path 可以以数据路径的形式给出，支持获取数组中的某一项或对象的某个属性，如 <code>array[2].foo.bar</code>。</li>
+</ol>
 
       
     </div>
