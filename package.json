@@ -1,6 +1,6 @@
 {
-	"name": "client-api",
-	"version": "1.0.0",
+	"name": "brj-client-api",
+	"version": "0.0.2-pre",
 	"repository": {
 		"type": "git",
 		"url": "git@github.com:bianruanjian/client-api.git"

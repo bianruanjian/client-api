@@ -1,6 +1,7 @@
 import * as config from './config';
 import { basename, extname, join } from 'path';
 import { readdirSync } from 'fs';
+import { initConfig } from 'grunt-dojo2';
 
 export = function (grunt: any) {
 	require('load-grunt-tasks')(grunt);
@@ -16,7 +17,9 @@ export = function (grunt: any) {
 		require(mid)(grunt);
 	});
 
-	grunt.initConfig(config);
+	// grunt.initConfig(config);
+	
+	initConfig(grunt, config);
 
 	grunt.registerTask('default', ['hexoClean', 'clean', 'sync', 'concurrent:build']);
 	grunt.registerTask('generate', ['hexo']);
@@ -24,4 +27,12 @@ export = function (grunt: any) {
 	grunt.registerTask('test', ['tslint']);
 	grunt.registerTask('init', ['prompt:github', 'initAutomation']);
 	grunt.registerTask('ci', ['prebuild', 'default']);
+	grunt.registerTask(
+		'dist',
+		(grunt.config.get('distTasks') as string[]).concat([
+			'postcss:modules-dist',
+			'postcss:variables',
+			'copy:distFonts'
+		])
+	);
 };
