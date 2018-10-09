@@ -2,6 +2,7 @@ import { Config } from 'webserv/commands/createServer';
 import { middleware } from './config/webserv';
 import { repositorySource } from 'grunt-dojo2-extras/src/util/environment';
 import { join } from 'path';
+const pkgDir = require('pkg-dir');
 
 export interface WebServerConfig {
 	[key: string]: Config;
@@ -18,8 +19,6 @@ export const ghPagesBranch = 'gh-pages';
 
 export const binDirectory = join('node_modules', '.bin');
 
-export const distDirectory = '_dist';
-
 export const siteDirectory = 'site';
 
 export const syncDirectory = '.sync';
@@ -28,6 +27,78 @@ export const publishDirectory = '.ghpublish';
 
 // This is considered the master branch as far as the CI is concerned
 export const masterBranch = 'master';
+
+const createProcessors = require('grunt-dojo2/tasks/util/postcss').createProcessors;
+
+const packagePath = pkgDir.sync(process.cwd());
+
+const fontFiles = 'theme/fonts/*.{svg,ttf,woff}';
+const staticExampleFiles = ['*/example/**', '!*/example/**/*.js'];
+const staticTestFiles = '*/tests/**/*.{html,css,json,xml,js,txt}';
+
+export const copy = {
+	'staticDefinitionFiles-dev': {
+		cwd: 'src',
+		src: ['<%= staticDefinitionFiles %>'],
+		dest: '<%= devDirectory %>'
+	},
+	staticTestFiles: {
+		expand: true,
+		cwd: 'src',
+		src: [staticTestFiles],
+		dest: '<%= devDirectory %>'
+	},
+	staticExampleFiles: {
+		expand: true,
+		cwd: 'src',
+		src: staticExampleFiles,
+		dest: '<%= devDirectory %>'
+	},
+	devFonts: {
+		expand: true,
+		cwd: 'src',
+		src: fontFiles,
+		dest: '<%= devDirectory %>'
+	},
+	distFonts: {
+		expand: false,
+		cwd: 'src',
+		src: fontFiles,
+		dest: '<%= distDirectory %>'
+	},
+	devStyles: {
+		expand: true,
+		cwd: 'src',
+		src: '**/example.css',
+		dest: '<%= devDirectory %>'
+	}
+};
+
+export const typedoc = {
+	options: {
+		ignoreCompilerErrors: true // Remove this once compile errors are resolved
+	}
+};
+
+export const postcss = {
+	'modules-dev': {
+		files: [
+			{
+				expand: true,
+				src: ['**/*.m.css'],
+				dest: '<%= devDirectory %>',
+				cwd: 'src'
+			}
+		],
+		options: {
+			processors: createProcessors({
+				dest: '_build/',
+				cwd: 'src',
+				packageJson: require(join(packagePath, 'package.json'))
+			})
+		}
+	}
+};
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Task Configuration
