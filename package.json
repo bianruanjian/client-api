@@ -6,7 +6,7 @@
 		"url": "git@github.com:bianruanjian/client-api.git"
 	},
 	"dependencies": {
-		"@dojo/framework": "^3.0.1",
+		"@dojo/framework": "^4.0.0",
 		"bulma": "^0.5.1",
 		"hexo": "^3.3.9",
 		"hexo-renderer-yasr": "^4.0.0",
@@ -14,8 +14,8 @@
 		"tslib": "^1.6.0"
 	},
 	"devDependencies": {
-		"@dojo/cli-test-intern": "^3.0.0",
-		"@dojo/cli-build-app": "~3.0.0",
+		"@dojo/cli-test-intern": "~4.0.0",
+		"@dojo/cli-build-app": "~4.0.0",
 		"@dojo/loader": "~2.0.0",
 		"@types/archiver": "^0.15.37",
 		"@types/github": "0.0.0",
@@ -28,7 +28,7 @@
 		"grunt": "^1.0.1",
 		"grunt-concurrent": "~2.3.1",
 		"grunt-contrib-clean": "^1.0.0",
-		"grunt-dojo2": "^3.0.0",
+		"grunt-dojo2": "~4.0.0",
 		"grunt-dojo2-extras": "^2.0.0-beta1.3",
 		"grunt-shell": "^2.1.0",
 		"grunt-tslint": "^4.0.1",

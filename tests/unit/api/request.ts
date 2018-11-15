@@ -1,6 +1,6 @@
 const { describe, it, beforeEach } = intern.getInterface('bdd');
 const { assert } = intern.getPlugin('chai');
-import global from '@dojo/shim/global';
+import global from '@dojo/framework/shim/global';
 import { stub } from 'sinon';
 import request from '../../../src/api/request';
 

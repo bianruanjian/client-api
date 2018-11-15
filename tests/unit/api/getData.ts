@@ -1,6 +1,6 @@
 import { describe, it, beforeEach } from "intern/lib/interfaces/bdd";
 import { Store } from '@dojo/framework/stores/Store';
-import global from '@dojo/shim/global';
+import global from '@dojo/framework/shim/global';
 import getData from '../../../src/api/getData';
 import { OperationType } from '@dojo/framework/stores/state/Patch';
 import { Pointer } from '@dojo/framework/stores/state/Pointer';

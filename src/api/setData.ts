@@ -2,7 +2,7 @@ import { processExecutor } from '@dojo/framework/stores/process';
 import { Store } from '@dojo/framework/stores/Store';
 import { PatchOperation } from '@dojo/framework/stores/state/Patch';
 import { replace } from '@dojo/framework/stores/state/operations';
-import global from '@dojo/shim/global';
+import global from '@dojo/framework/shim/global';
 import { StateData } from '../interface';
 
 // 转换字符串为数据路径：
