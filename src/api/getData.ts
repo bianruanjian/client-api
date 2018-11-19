@@ -1,5 +1,5 @@
 import { Store } from '@dojo/framework/stores/Store';
-import global from '@dojo/shim/global';
+import global from '@dojo/framework/shim/global';
 
 // 转换字符串为数据路径：
 // 1. a.b  -> /a/b
